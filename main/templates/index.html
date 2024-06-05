@@ -1,12 +1,31 @@
-{% extends 'base.html %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>hola panes del mundo</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h3>
+      Lista de pasteles
+    </h3>
+    <div calss="row">
+      <div class="col-3">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://dgari.com/wp-content/uploads/2023/05/flan-de-corazon.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Flan tradicional</h5>
+            <p class="card-text">Flan tradicional a base de la receta de la abuelita</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Precio: 2000</li>
+            <li class="list-group-item">Aproveche la oferta</li>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">Pedir</a>
+            <a href="#" class="card-link"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
   
-</body>
-</html>
+{% endblock %}
