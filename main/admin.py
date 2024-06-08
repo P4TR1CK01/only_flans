@@ -1,5 +1,7 @@
 from django.contrib import admin
-# from flan.models import Flan
-# Register your models here.
+from main.models import Contact
 
-# class PersonaAdmin(admin.Model.)
+class PersonaAdmin(admin.ModelAdmin):
+  pass
+
+admin.site.register(Contact, PersonaAdmin)

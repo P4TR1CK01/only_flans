@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from main.items import flanes
 from main.forms import ContactForm
+from main.models import Contact
 
 # Create your views here.
 def index(req):
@@ -22,6 +23,9 @@ def welcome(req):
     else:
         form = ContactForm(req.POST)                    # Se crea una instancia de FlanForm con los datos enviados en la solicitud POST.
         if form.is_valid():                             # Se verifica si los datos del formulario son válidos.
+            Contact.objects.create(
+              **form.cleaned_data
+            )
             return redirect('/success')                 # Si el formulario es válido, se redirige al usuario a la URL '/success'.
         context = {'form': form}                        # Se crea un contexto que contiene el formulario con los datos (válidos o no).
         return render(req, 'welcome.html', context)     # Se vuelve a renderizar la plantilla con el contexto actualizado.
