@@ -3,9 +3,11 @@
 {% block content %}
   <form action="/welcome/" method="post">
     {% csrf_token %}
-    {{ form }}
-      <button type="submit" class="btn btn-primary">
-        Enviar
-      </button>
+    <div class="row">
+      <div class="col-6 offset-3"> 
+        {{ form }}
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </div>
+    </div>
   </form>
 {% endblock %}

@@ -11,17 +11,20 @@ def index(req):
 def about(req):
   return render(req, 'about.html')
 
+def ayuda(req):
+  return render(req, 'help.html')
+
 def welcome(req):
     if req.method == 'GET':
-        form = ContactForm() # Se crea una instancia del formulario FlanForm sin datos iniciales.
-        context = {'form': form} # Se crea un contexto que contiene el formulario vacío.
-        return render(req, 'welcome.html', context) # Se renderiza la plantilla 'welcome.html' con el contexto.
+        form = ContactForm()                            # Se crea una instancia del formulario FlanForm sin datos iniciales.
+        context = {'form': form}                        # Se crea un contexto que contiene el formulario vacío.
+        return render(req, 'welcome.html', context)     # Se renderiza la plantilla 'welcome.html' con el contexto.
     else:
-        form = ContactForm(req.POST) # Se crea una instancia de FlanForm con los datos enviados en la solicitud POST.
-        if form.is_valid(): # Se verifica si los datos del formulario son válidos.
-            return redirect('/success') # Si el formulario es válido, se redirige al usuario a la URL '/success'.
-        context = {'form': form} # Se crea un contexto que contiene el formulario con los datos (válidos o no).
-        return render(req, 'welcome.html', context) # Se vuelve a renderizar la plantilla con el contexto actualizado.
+        form = ContactForm(req.POST)                    # Se crea una instancia de FlanForm con los datos enviados en la solicitud POST.
+        if form.is_valid():                             # Se verifica si los datos del formulario son válidos.
+            return redirect('/success')                 # Si el formulario es válido, se redirige al usuario a la URL '/success'.
+        context = {'form': form}                        # Se crea un contexto que contiene el formulario con los datos (válidos o no).
+        return render(req, 'welcome.html', context)     # Se vuelve a renderizar la plantilla con el contexto actualizado.
 
 def success(req):
   return render(req, 'success.html')
