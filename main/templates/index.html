@@ -1,31 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <div class="container">
-    <h3>
-      Lista de pasteles
-    </h3>
-    <div calss="row">
+  <h3>Pasteles del Mundo</h3>
+  <div class="row">
+    {% for flan in flanes %}
       <div class="col-3">
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="https://dgari.com/wp-content/uploads/2023/05/flan-de-corazon.png" alt="Card image cap">
+        <div class="card mb-5">
+          <img class="card-img-top" src="{{ flan.img_url}}" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Flan tradicional</h5>
-            <p class="card-text">Flan tradicional a base de la receta de la abuelita</p>
+            <h5 class="card-title">{{ flan.nombre }}</h5>
+            <p class="card-text">{{ flan.descripcion }}</p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Precio: ${{ flan.precio}}</li>
             <li class="list-group-item">Precio: 2000</li>
             <li class="list-group-item">Aproveche la oferta</li>
           </ul>
           <div class="card-body">
-            <a href="#" class="card-link">Pedir</a>
-            <a href="#" class="card-link"></a>
+            <a href="#" class="card-link">Al Carrito</a>
+            <a href="#" class="card-link">Compra</a>
           </div>
         </div>
       </div>
-    </div>
-
+    {% endfor %}
   </div>
-  
+
 {% endblock %}
