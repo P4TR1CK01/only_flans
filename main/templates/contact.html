@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container my-3">
+    <div>Bienvenidos a los flanes del mundo</div>
+    {% for  %}
+    <form action="/contact/" method="post">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-6 offset-3"> 
+          {{ form }}
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </div>
+    </form>
+</div>
+{% endblock %}

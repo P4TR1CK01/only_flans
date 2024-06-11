@@ -21,7 +21,6 @@ class ContactForm(forms.Form):
       'class': 'form-control mb-3', 
       'rows': 5,
       'placeholder': 'Ingrese aquí su mensaje'
-
       })
-)
+)   
   
