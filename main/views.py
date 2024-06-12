@@ -37,6 +37,14 @@ def contact(req):
 def success(req):
   return render(req, 'success.html')
 
+def login(req):
+  return render(req, 'login.html')
+
+def register(req):
+  return render(req, 'register.html')
+
+
+
 
   # ahora tengo que validar que customer name tenga al menos un @ y un . 
   # by que customr_name sea de largo maximo 64 (lenght)

@@ -16,7 +16,7 @@ class ContactForm(forms.Form):
       })
 )
   mensaje = forms.CharField(
-    max_length=64,git 
+    max_length=64,
     widget=forms.Textarea(attrs={
       'class': 'form-control mb-3', 
       'rows': 5,

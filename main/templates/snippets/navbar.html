@@ -1,23 +1,19 @@
 {% block css %}
-  <style>
-    .img-logo {
-      height: 6rem;
-    }
-    nav, .navbar {
-    background-color:transparent !important; 
-    }
-  </style>
+<style>
+  .img-logo {
+    height: 4rem;
+  }
+</style>
 {% endblock %}
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success mb-3">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-
       <li class="nav-item">
         <a class="nav-link" href="/">Inicio</a>
       </li>
@@ -33,7 +29,19 @@
       <li class="nav-item">
         <a class="nav-link" href="/help">Ayuda</a>
       </li>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/register">Regístrate con nosotros</a>
+      </li>
     </ul>
-
+    <div class="d-flex">
+      <a href="/login" class="btn btn-primary">LOGIN</a>
+      {% if user.is_authenticated %}
+      <form id="logout-form" action="/logout/" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger ms-2">Logout</button>
+      </form>
+      {% endif %}
+    </div>
   </div>
 </nav>

@@ -1,13 +1,23 @@
 {% load static %}
 
 {% block css %}
-<style>
-  .img-logo {
-    height: 6rem;
-  }
+    /* Estilos para el logotipo */
+  <style>
+    .main-logo {
+      height: 8rem;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center; /* Centra verticalmente */
+    }
   </style>
 {% endblock %}
-<div class="text-center">
-  <a href="/"><img src= '../statics/img/logo.png' alt="logo Onlyflans" class="img-logo my-2"></a>
+
+<div class="container justify-content-center">
+  <div class="row">
+    <div class="col">
+      <img src="{% static 'img/logo.png' %}" alt="Logotipo" class="main-logo">
+    </div>
+  </div>
 </div>
 
