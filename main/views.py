@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from main.items import flanes
 from main.forms import ContactForm
+from main.forms import RegisterForm
 from main.models import Contact
 from django.contrib.auth.decorators import login_required
 from django.contrib.messages.views import SuccessMessageMixin
@@ -47,7 +48,25 @@ def login(req):
   return render(req, 'login.html')
 
 def register(req):
-  return render(req, 'register.html')
+  form = RegisterForm()
+  context = {'form': form}
+  
+  if req.method == 'GET':
+    return render(req, 'registration/register.html', context)
+  
+  form = RegisterForm(req.POST)
+  if form.is_valid():
+    data = form.cleaned_data
+    if data['password'] !=data['passRepeat']:
+      messages.warning(req, 'Ambas contraseñas deben coincidir')
+      return redirect('/accounts/register/')
+    
+    User.objects.create_user(data['username'], data['email', data['password']])
+    messages.success(req, 'Usuario creado con éxito!')
+    
+  # en caso de Post
+  return redirect('/')
+  
 
 
 

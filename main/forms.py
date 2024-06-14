@@ -24,3 +24,7 @@ class ContactForm(forms.Form):
       })
 )   
   
+class RegisterForm(forms.Form):
+  username = forms.CharField()
+  password = forms.CharField()
+  passRepeat = forms.CharField()
