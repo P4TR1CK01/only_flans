@@ -1,43 +1,46 @@
 {% extends 'base.html' %}
 
-{% block content %}
-
 {% block css %}
-<!--Estilos para las tarjetas -->
 <style>
+  body {
+  background-image: linear-gradient(to right, mediumaquamarine, lightcoral); /* Degradado */
+  }
+  /* <!--Estilos para las tarjetas--> */
   .card {
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
-  }
+    }
 
   .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+    } 
 
   .card-title {
     font-size: 18px;
-  }
+    }
 
   .card-text {
     font-size: 14px;
     color: #666;
-  }
+    }
 
   .list-group-item {
     font-size: 14px;
-  }
+    }
 
   .card-link {
     text-decoration: none;
     color: #007bff;
     font-weight: bold;
     margin-right: 10px;
-  }
+    }
 </style>
 {% endblock %}
+
+{% block content %}
   <h3>Pasteles del Mundo</h3>
   <div class="row">
     {% for flan in flanes %}
@@ -58,5 +61,4 @@
       </div>
     {% endfor %}
   </div>
-
 {% endblock %}

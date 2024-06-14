@@ -3,8 +3,14 @@ from django.shortcuts import render, redirect
 from main.items import flanes
 from main.forms import ContactForm
 from main.models import Contact
+from django.contrib.auth.decorators import login_required
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.views import LoginView
 
 # Create your views here.
+class LoginViewPropia(SuccessMessageMixin, LoginView):
+  success_message = "Has ingresado correctamente"
+
 def index(req):
   context = {'flanes': flanes}
   return render(req, 'index.html', context)

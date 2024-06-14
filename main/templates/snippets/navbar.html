@@ -20,6 +20,7 @@
       <li class="nav-item">
         <a class="nav-link" href="/welcome">Bienvenidos</a>
       </li>
+      <div class="d-flex" role="search"></div>
       <li class="nav-item">
         <a class="nav-link" href="/about">Nosotros</a>
       </li>
@@ -35,12 +36,18 @@
       </li>
     </ul>
     <div class="d-flex">
-      <a href="/login" class="btn btn-primary">LOGIN</a>
       {% if user.is_authenticated %}
-      <form id="logout-form" action="/logout/" method="post">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-danger ms-2">Logout</button>
-      </form>
+        <span class="d-inline-block m-1 text-ight">
+          Hola {{ user.username }}
+        </span>
+        <form action="{% url 'logout' %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">
+            LOGOUT
+          </button>
+        </form>
+      {% else %}
+        <a href="{% url 'login' %}" class="btn btn-primary">LOGIN</a>
       {% endif %}
     </div>
   </div>
