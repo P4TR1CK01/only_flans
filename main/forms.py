@@ -25,6 +25,12 @@ class ContactForm(forms.Form):
 )   
   
 class RegisterForm(forms.Form):
-  username = forms.CharField()
-  password = forms.CharField()
-  passRepeat = forms.CharField()
+  ingrese_su_nombre_de_usuario = forms.CharField(
+    widget=forms.TextInput(attrs={'class': 'form-control text-primary', 'palceholder': 'Nombre de usuario'})
+  )
+  contraseña = forms.CharField(
+    widget=forms.PasswordInput(attrs={'class': 'form-control text-primary-emphasis', 'placeholder': 'ingrese una contraseña'})
+  )
+  repita_contraseña = forms.CharField(
+    widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Repita su contraseña'})
+  )

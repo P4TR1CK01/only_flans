@@ -1,2 +1,141 @@
-/* Estilos del footer */
+                /* Estilos CSS
+                ============== */
 
+/* Estilos background */
+body {
+  background-image: linear-gradient(to right, steelblue, mediumaquamarine) !important; /* Degradado */
+  transition: background-color 1s; /* Transición suave */
+  font-family: "Bebas Neue", sans-serif;
+  scroll-behavior: smooth;
+  max-width: auto;
+  min-width: 1rem;
+} 
+
+/* Estilos logo */
+.main-logo {
+  height: 6rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+/* Estilos Navbar */
+nav a:hover {
+    color: rebeccapurple !important;
+}
+
+/* Estilos index */
+.header-indx {
+  color: #ff6347;
+  font-size: 2rem;
+  border: 2px solid #ff6347;
+  padding: 10px;
+}
+
+.header-indx:hover {
+  color: mediumpurple;
+  transition: color 0.5s ease;
+}
+
+/* <!--Estilos para las tarjetas--> */
+.card {
+  height: 25rem !important;
+  border: 10px solid;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 10);
+  }
+
+.card:hover {
+  transform: translateY(-50px);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
+}
+
+.hover-shadow {
+  transition: box-shadow 0.8s;
+}
+
+.flip-container {
+  perspective: 1000px;
+}
+
+.flipper {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.flip-container:hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.card-title {
+  font-size: 25px;
+  }
+
+.card-text {
+  font-size: 18px;
+  color: #666;
+  }
+
+/* Estilos header */
+.header- {
+  color: #ff6347;
+  font-size: 2rem;
+  border: 2px solid #ff6347;
+  padding: 10px;
+}
+
+.header-:hover {
+  color: mediumpurple;
+  transition: color 0.5s ease;
+}
+
+/* Estilos footer */
+footer {
+  align-items: flex-end;
+  background-color: LightGray;
+  line-height: 2;
+}
+
+.container-credit {
+  overflow: hidden;
+  white-space: nowrap; /* Asegura que los elementos se alineen horizontalmente */
+}
+
+.scrolling {
+  display: inline-block;
+  animation: scrollCredits 20s linear infinite;
+}
+
+@keyframes scrollCredits {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+.item {
+  display: inline-bloc; 
+  margin-right: 50px; 
+}

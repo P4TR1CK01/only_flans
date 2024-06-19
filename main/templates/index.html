@@ -1,64 +1,35 @@
 {% extends 'base.html' %}
 
-{% block css %}
-<style>
-  body {
-  background-image: linear-gradient(to right, mediumaquamarine, lightcoral); /* Degradado */
-  }
-  /* <!--Estilos para las tarjetas--> */
-  .card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-    }
-
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    } 
-
-  .card-title {
-    font-size: 18px;
-    }
-
-  .card-text {
-    font-size: 14px;
-    color: #666;
-    }
-
-  .list-group-item {
-    font-size: 14px;
-    }
-
-  .card-link {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-    margin-right: 10px;
-    }
-</style>
-{% endblock %}
-
 {% block content %}
-  <h3>Pasteles del Mundo</h3>
+<p class="header- mb-5 text-center">Flanes del Mundo para disfrutar y compartir</p>
+<div class="container">
   <div class="row">
     {% for flan in flanes %}
-      <div class="col-3">
-        <div class="card mb-5">
-          <img class="card-img-top" src="{{ flan.img_url}}" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">{{ flan.nombre }}</h5>
-            <p class="card-text">{{ flan.descripcion }}</p>
+    <div class="col-sm-12 col-md-6 col-lg-3 col xl-1">
+      <div class="card mb-5 hover-shadow bg-info flip-container">
+        <div class="flipper ">
+          <div class="front">
+            <img class="card-img-top" src="{{ flan.img_url}}" alt="Card image cap">
+            <div class="card-body">
+              <h3 class="card-title merriweather-light">{{ flan.nombre }}</h3>
+              <p class="card-text">{{ flan.descripcion }}</p>
+            </div>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Precio: ${{ flan.precio}}</li>
-          </ul>
-          <div class="card-body">
-            <a href="#" class="card-link">Al Carrito</a>
+          <div class="back">
+            <img class="card-img-top" src="{{ flan.img_url}}" alt="Card image cap">
+  
+            <div class="card-body">
+              <h3 class="card-title merriweather-light">{{ flan.nombre }}</h3>
+              <p class="card-text">{{ flan.descripcion }}</p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item ">Precio: ${{ flan.precio }}</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+    </div>
     {% endfor %}
   </div>
+</div>
 {% endblock %}

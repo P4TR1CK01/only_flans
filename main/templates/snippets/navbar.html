@@ -1,53 +1,44 @@
-{% block css %}
-<style>
-  .img-logo {
-    height: 4rem;
-  }
-</style>
-{% endblock %}
-
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-success mb-3">
+<nav class="navbar navbar-expand-lg navbar-dark w-100">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Inicio</a>
+    <ul class="navbar-nav ms-auto ">
+      <li class="nav-item ">
+        <a class="nav-link text-primary-emphasis" href="/">Inicio</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/welcome">Bienvenidos</a>
+        <a class="nav-link text-primary-emphasis" href="/welcome">Bienvenidos</a>
       </li>
       <div class="d-flex" role="search"></div>
-      <li class="nav-item">
-        <a class="nav-link" href="/about">Nosotros</a>
+      <li class="nav-item ">
+        <a class="nav-link text-primary-emphasis" href="/about">Nosotros</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/contact">Contáctanos</a>
+        <a class="nav-link text-primary-emphasis" href="/contact">Contáctanos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/help">Ayuda</a>
-      </li>
+        <a class="nav-link text-primary-emphasis" href="/register">Regístrate aquí</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/register">Regístrate con nosotros</a>
+        <a class="nav-link text-primary-emphasis" href="/help">Ayuda</a>
+      </li>
       </li>
     </ul>
-    <div class="d-flex">
+    <div class="d-flex ml-auto">
       {% if user.is_authenticated %}
-        <span class="d-inline-block m-1 text-ight">
-          Hola {{ user.username }}
-        </span>
-        <form action="{% url 'logout' %}" method="post">
-          {% csrf_token %}
-          <button type="submit" class="btn btn-danger">
-            LOGOUT
-          </button>
-        </form>
+      <span class="d-inline-block text-ight">
+        Hola {{ user.username }}
+      </span>
+      <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-outline-danger">
+          LOGOUT
+        </button>
+      </form>
       {% else %}
-        <a href="{% url 'login' %}" class="btn btn-primary">LOGIN</a>
+      <a href="{% url 'login' %}" class="btn btn-outline-info btn-nav">LOGIN</a>
       {% endif %}
     </div>
   </div>

@@ -1,13 +1,24 @@
-{% extends "base.html" %}
-
-{% block title %}{{ page }}{% endblock title %}
+{% extends 'base.html' %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1>Bienvenido Cliente</h1>
-            </div>
-        </div>
+<div class="container">
+  <h1 class="header- text-center mb-3">Flanes y más Flanes</h1>
+  <div class="row align-items-center">
+    <div class="col-sm-12 col-md-6">
+      <img
+        src="https://www.tinyrebel.co.uk/uploads/images/products/large/tiny-rebel-only-flans-1712755435038A8634-2.jpg"
+        class="img-fluid" alt="Cena en Paris">
     </div>
-{% endblock content %}
+    <div class="col-6">
+      <p class="p-wel text-center text-primary-emphasis">OnlyFlans es una empresa enfocada en el mundo de la
+        pastelería y los postres, en especial en
+        la
+        venta de ﬂan(de ahí su nombre), nace en 2021 en santiago de chile como una empresa familiar que pretende
+        entregar
+        productos de calidad a su clientela, estando ubicada en providencia, a pasos del metro Parque
+        Bustamante.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

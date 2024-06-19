@@ -2,14 +2,14 @@
 
 {% block content %}
   <div class="container my-3">
-    <div>Bienvenidos a los flanes del mundo</div>
+    <div class="header- text-center mb-3">Bienvenidos a los flanes del mundo</div>
 
     <form action="/contact/" method="post">
       {% csrf_token %}
       <div class="row">
-        <div class="col-6 offset-3"> 
+        <div class="col-6 offset-3 text-primary-emphasis"> 
           {{ form }}
-          <button type="submit" class="btn btn-success">Enviar</button>
+          <button type="submit" class="btn btn-outline-info">Enviar</button>
         </div>
       </div>
     </form>
